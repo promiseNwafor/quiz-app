@@ -7,6 +7,11 @@
 body{
     background: rgb(239, 250, 242);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(1, 148, 128);
+}
+
+h3{
+    line-height: 2rem;
 }
 
 a{
@@ -29,9 +34,7 @@ a{
 
 #container .question-container{
     width: 60%;
-    height: 100px;
     padding: 1rem;
-    /* margin-bottom: .5rem; */
 }
 
 #container .options-container{
@@ -41,19 +44,23 @@ a{
 #container .option-container{
     width: 60%;
     height: 40px;
-    border-radius: 20px;
     margin: 1rem auto;
     padding: 0.5rem 0.5rem;
+    padding-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: 2px  solid rgb(1, 148, 128);
 }
 
 #container .option-alphabet{
-    width: 10%;
+    width: 7%;
     height: 40px;
     padding: 0.5rem;
+    background: rgb(1, 148, 128);
+    color: rgb(239, 250, 242);
+    margin-left: 0;
 }
 
 #container .option{
@@ -68,6 +75,7 @@ a{
     color: rgb(239, 250, 242);
     padding: 1rem 1.5rem;
     margin: 2rem auto;
+    cursor: pointer;
 }
 
 .correct-option{
@@ -79,3 +87,11 @@ a{
     background: rgb(224, 98, 98);
     transition: background 1s ease;
 }
+
+/* #loading{
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: white;
+    border: 10pxx solid rgb(1, 148, 128);
+} */
