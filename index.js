@@ -3,7 +3,7 @@ const options = Array.from(document.querySelectorAll(".option-container"));
 const optionsSentence = Array.from(document.querySelectorAll(".option"));
 const optionsNo = document.querySelectorAll(".option-alphabet");
 const startButton = document.querySelector(".btn-start");
-const alphabets = ['A.', 'B.', 'C.', 'D.']
+const alphabets = ['A', 'B', 'C', 'D']
 let api = [];
 let isCorrect, data, randomNo, optionsArray, correctAnswer;
 
@@ -56,15 +56,13 @@ const checkAnswer = () => {
 }
 
 const resumeQuiz = () => {
-    if (api.length > 0){
-        setTimeout(() => { 
+    api.length ? 
+        (setTimeout(() => { 
         displayData()
         checkAnswer()
         startButton.innerHTML = 'Skip Question'
-        }, 800)
-    }else{
-        window.location = "end.html"
-    }
+        }, 800))
+    : window.location = "end.html"
 }
 
 startButton.addEventListener('click', resumeQuiz)
