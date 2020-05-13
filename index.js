@@ -1,10 +1,13 @@
 const questionDisplay = document.querySelector("h3");
+const optionsContainer = document.querySelector(".options-container");
 const options = Array.from(document.querySelectorAll(".option-container"));
 const optionsSentence = Array.from(document.querySelectorAll(".option"));
 const optionsNo = document.querySelectorAll(".option-alphabet");
 const startButton = document.querySelector(".btn-start");
+const loading = document.querySelector("#loading");
 const alphabets = ['A', 'B', 'C', 'D']
 let api = [];
+let isBtnClicked = false;
 let isCorrect, data, randomNo, optionsArray, correctAnswer;
 
 const fetchApi = () => {
@@ -51,18 +54,31 @@ const checkAnswer = () => {
                         : (option.classList.add('wrong-option'))
                 )
                 resumeQuiz()
-            })
         })
+    })
 }
 
 const resumeQuiz = () => {
-    api.length ? 
+    api.length > 0 ? 
         (setTimeout(() => { 
         displayData()
         checkAnswer()
-        startButton.innerHTML = 'Skip Question'
+        startButton.innerHTML = 'Skip Question',
+        optionsContainer.style.display = "block",
+        loading.style.display = "none"
         }, 800))
-    : window.location = "end.html"
+    :   setTimeout(() => window.location = "end.html", 800)
 }
 
-startButton.addEventListener('click', resumeQuiz)
+const startPage = () => {
+    !isBtnClicked ? optionsContainer.style.display = "none" : ''
+}
+
+startButton.addEventListener('click', function(){
+    isBtnClicked = true,
+    resumeQuiz()
+})
+
+window.onload = () => {
+    startPage()
+}
