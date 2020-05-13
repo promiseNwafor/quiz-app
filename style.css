@@ -21,6 +21,7 @@ a{
 
 .link{
     margin: 2rem;
+    cursor: pointer;
 }
 
 #container{
@@ -33,20 +34,21 @@ a{
 }
 
 #container .question-container{
-    width: 60%;
+    max-width: 650px;
+    width: 90%;
     padding: 1rem;
 }
 
 #container .options-container{
     width: 100%;
+    display: block;
 }
 
 #container .option-container{
+    max-width: 600px;
     width: 60%;
-    height: 40px;
+    height: auto;
     margin: 1rem auto;
-    padding: 0.5rem 0.5rem;
-    padding-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,17 +57,19 @@ a{
 }
 
 #container .option-alphabet{
-    width: 7%;
-    height: 40px;
+    max-width: 50px;
+    width: 15%;
+    height: auto;
     padding: 0.5rem;
+    padding-left: 1rem;
     background: rgb(1, 148, 128);
     color: rgb(239, 250, 242);
     margin-left: 0;
 }
 
 #container .option{
-    width: 90%;
-    height: 40px;
+    width: 85%;
+    height: 100%;
     padding: 0.5rem;
 }
 
@@ -88,10 +92,22 @@ a{
     transition: background 1s ease;
 }
 
-/* #loading{
+#loading{
     display: block;
-    width: 200px;
-    height: 200px;
-    background: white;
-    border: 10pxx solid rgb(1, 148, 128);
-} */
+    width: 70px;
+    height: 70px;
+    border-top: 7px solid rgb(1, 148, 128);
+    border-bottom: 7px solid rgb(1, 148, 128);
+    border-radius: 50%;
+    margin: 4rem;
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} 
